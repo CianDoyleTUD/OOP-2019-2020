@@ -61,6 +61,8 @@ public class Main
         System.out.println(a);
         System.out.println(b);
 
+        topcat.kill();
+
         // c c will get printed out because 
         // a & b are object references
 

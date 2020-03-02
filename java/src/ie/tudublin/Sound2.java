@@ -101,13 +101,13 @@ public class Sound2 extends PApplet
 		fft.forward(as.left);
 
 		stroke(255);
-		float highestBin = 0;
+		int highestBin = 0;
 		for(int i = 0 ; i < fft.specSize() ; i ++)
 		{
 			line(i, 0, i, fft.getBand(i) * 100);
-			
-			if (fft.getBand(i) > highestBin) {
-				highestBin = fft.getBand(i);
+
+			if (fft.getBand(i) > fft.getBand(highestBin)) {
+				highestBin = i;
 			}
 
 		}
